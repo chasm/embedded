@@ -1,0 +1,2 @@
+class Problem < Category
+end

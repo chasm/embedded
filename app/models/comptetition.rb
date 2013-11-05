@@ -1,0 +1,2 @@
+class Competition < Category
+end
