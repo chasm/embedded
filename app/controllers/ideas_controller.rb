@@ -1,34 +1,38 @@
 class IdeasController < ApplicationController
   def index
     @ideas = Idea.all.entries
-    
-    render json: @ideas
   end
 
   def show
     @idea = Idea.find_by(id: params[:id])
-    
-    render json: @idea
+  end
+  
+  def new
+    @idea = Idea.new
   end
 
   def create
     idea = Idea.create(idea_params)
     
-    head :created
+    redirect_to idea_path(idea)
+  end
+  
+  def edit
+    @idea = Idea.find_by(id: params[:id])
   end
 
   def update
     idea = Idea.find_by(id: params[:id])
     idea.update(idea_params)
     
-    head :no_content
+    redirect_to idea_path(idea)
   end
 
   def destroy
     @idea = Idea.find_by(id: params[:id])
     @idea.destroy
     
-    head :no_content
+    redirect_to ideas_path
   end
   
   private

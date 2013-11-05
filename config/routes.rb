@@ -1,5 +1,5 @@
 Embedder::Application.routes.draw do
-  resources :ideas, except: [ :new, :edit ]
+  resources :ideas
   
-  # root 'welcome#index'
+  root 'ideas#index'
 end
