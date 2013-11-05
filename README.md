@@ -1,0 +1,4 @@
+embedded
+========
+
+Fun with mongo
